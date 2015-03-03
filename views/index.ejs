@@ -50,7 +50,14 @@
 
       <div class="starter-template">
         <h1>Bootstrap starter template</h1>
-        <div ng-controller="StreamController">Here</div>
+        <div ng-controller="StreamController">
+
+        <div ng-repeat="tweet in stream">
+        	<a href="//twitter.com/{{tweet.user.screen_name}}">@{{tweet.user.screen_name}}</a>: {{tweet.text}}
+        </div>
+
+
+        </div>
       </div>
 
     </div><!-- /.container -->
