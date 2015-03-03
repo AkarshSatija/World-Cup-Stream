@@ -1,4 +1,4 @@
-var app = angular.module('Twitter', ['ngResource']);
+var app = angular.module('Twitter', ['ngResource','ngClipboard']);
 
 app.controller('StreamController', function($scope, $resource) {
     $scope.stream = [];
@@ -17,6 +17,13 @@ app.controller('StreamController', function($scope, $resource) {
 
     }
 
+	$scope.fallback = function(copy) {
+      window.prompt('Press cmd+c to copy the text below.', copy);
+    };
+
+    $scope.showMessage = function() {
+      console.log("clip-click works!");
+    };
 
 $scope.load();
 });
@@ -26,3 +33,7 @@ app.filter('reverse', function() {
     return items.slice().reverse();
   };
 });
+
+app.config(['ngClipProvider', function(ngClipProvider) {
+    ngClipProvider.setPath("//cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.1.6/ZeroClipboard.swf");
+  }]);
