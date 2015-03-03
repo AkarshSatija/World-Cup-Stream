@@ -46,18 +46,20 @@
       </div>
     </nav>
 
-    <div class="container">
+    <div class="container" ng-controller="StreamController">
 
       <div class="starter-template">
         <h1>Bootstrap starter template</h1>
-        <div ng-controller="StreamController">
+        <div >
 
-        <div ng-repeat="tweet in stream">
+        <div class="tweet repeat" ng-repeat="tweet in stream | reverse">
         	<a href="//twitter.com/{{tweet.user.screen_name}}">@{{tweet.user.screen_name}}</a>: {{tweet.text}}
+        	<br> {{tweet.created_at }}
         </div>
 
 
         </div>
+        <button  ng-click="load()"> Load More </button>
       </div>
 
     </div><!-- /.container -->

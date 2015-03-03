@@ -21,10 +21,7 @@ app.set('view engine', 'ejs');
 //creating JSON API 
 app.use('/stream', function(req, res) {
     res.setHeader('Content-Type', 'application/json');
-    T.get('search/tweets', {
-        q: 'World Cup 2015',
-        count: 20
-    }, function(err, data, response) {
+    T.get('search/tweets', { q: 'World Cup 2015', count: 20 }, function(err, data, response) {
         res.send(data.statuses);
     });
 });
