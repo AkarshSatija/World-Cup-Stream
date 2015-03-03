@@ -20,15 +20,12 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 	<script src="/bower_components/angular-resource/angular-resource.js"></script>
 	
-
-  <script src="//cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.1.6/ZeroClipboard.min.js"></script>
-  <script src="//rawgit.com/asafdav/ng-clip/master/src/ngClip.js"></script>
-	
+	<script src="//cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.1.6/ZeroClipboard.min.js"></script>
+	<script src="//rawgit.com/asafdav/ng-clip/master/src/ngClip.js"></script>
 	<script src="/assets/js/app.js"></script>
 
 	
 </head>
-
 <body>
 
 	<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -56,22 +53,12 @@
 
       <div class="starter-template">
         <h1>World Cup 2015 Live stream</h1>
-        <div >
-<div class="form-group">
-        <label >Copy #1</label>
-        <input type="text" class="form-control" placeholder="Enter text to copy" ng-model="copy1">
-      </div>
-      <button class="btn btn-default" clip-copy="copy1">Copy!</button>
-
-      <br/><br/><br/>
-        <div class="tweet repeat" ng-repeat="tweet in stream | reverse">
-        	<a href="//twitter.com/{{tweet.user.screen_name}}">@{{tweet.user.screen_name}}</a>: {{tweet.text}}
-        	<div class="created_at pull-right">{{tweet.created_at}}</div>
-        	<input type="hidden" value="something" ng-model="copy2">
-        	<br><button class="btn" clip-copy="copy2" clip-click-fallback="fallback(copy)">Copy</button>
-        </div>
-
-
+        <div class="row">
+	        <div class="tweet repeat" ng-repeat="tweet in stream | reverse">
+	        	<a href="//twitter.com/{{tweet.user.screen_name}}">@{{tweet.user.screen_name}}</a>: {{tweet.text}}
+	        	<div class="created_at pull-right">{{tweet.created_at}}</div><br>
+	      		<button class="btn btn-default" clip-copy="tweet.text">Copy!</button>
+	        </div>
         </div>
         <button class="btn -btn-default" ng-click="load()"> Load More </button>
       </div>
