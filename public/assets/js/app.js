@@ -1,3 +1,13 @@
 var app = angular.module('Twitter', ['ngResource']);
 
-app.controller('TweetList', function($scope, $resource, $timeout) {}
+app.controller('StreamController', function($scope, $resource, $timeout) {
+
+
+	$scope.stream=$resource("/stream").query({}, function (data) {
+
+       
+	console.log(data);
+      });
+
+
+});

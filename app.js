@@ -17,12 +17,6 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 
-// geting index.ejs
-app.use('/', function(req, res) {
-    res.render('index', {
-        title: 'Angular, Node and Twitter API'
-    });
-})
 
 //creating JSON API 
 app.use('/stream', function(req, res) {
@@ -34,6 +28,14 @@ app.use('/stream', function(req, res) {
         res.send(data.statuses);
     });
 });
+
+// geting index.ejs
+app.use('/', function(req, res) {
+    res.render('index', {
+        title: 'Angular, Node and Twitter API'
+    });
+})
+
 
 
 module.exports = app;
