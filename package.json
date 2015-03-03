@@ -2,7 +2,7 @@
   "name": "js-playground",
   "version": "1.0.0",
   "description": "tweet stream of worldcup",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/wooplr/js-playground",
   "dependencies": {
+    "express": "^4.12.2",
     "node-twitter-api": "^1.5.0",
     "twit": "^1.1.20"
   }
