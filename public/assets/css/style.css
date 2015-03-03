@@ -9,3 +9,7 @@ body {
 .tweet.repeat{
 	padding: 20px;
 }
+.tweet .created_at
+{
+	font-size: 10px;
+}
