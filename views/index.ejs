@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" ng-app="Twitter">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" ng-app="Twitter" scroll  >
 
 <head>
 	<title>Twitter</title>
@@ -24,9 +24,12 @@
 	<script src="//rawgit.com/asafdav/ng-clip/master/src/ngClip.js"></script>
 	<script src="/assets/js/app.js"></script>
 
+	<style>
+	.min{display: none;}
+	</style>
 	
 </head>
-<body>
+<body >
 
 	<nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -54,13 +57,19 @@
       <div class="starter-template">
         <h1>World Cup 2015 Live stream</h1>
         <div class="row">
+
+        	<div class="trimmed" ng-class="{min:dataTrimmed}">
+	        	<div> trimmed </div>
+	        	<a href="#" ng-click="loadTrimmed()">Load Back trimmed tweets</a>
+	        </div>
+
 	        <div class="tweet repeat" ng-repeat="tweet in stream | reverse">
 	        	<a href="//twitter.com/{{tweet.user.screen_name}}">@{{tweet.user.screen_name}}</a>: {{tweet.text}}
 	        	<div class="created_at pull-right">{{tweet.created_at}}</div><br>
 	      		<button class="btn btn-default" clip-copy="tweet.text">Copy!</button>
 	        </div>
         </div>
-        <button class="btn -btn-default" ng-click="load()"> Load More </button>
+        <button class="btn -btn-default" id="loadMore" ng-click="load()"> {{loadButtonText}} </button>
       </div>
 
     </div><!-- /.container -->
