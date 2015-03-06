@@ -5,6 +5,7 @@
 - Run node app.js (It will indicate any modules missing once you open in browser).
 - Then install any modules missing using npm install <module_name>.
 - npm install twit -g (sudo if ERR)
+- npm install ejs -g
 - npm install express
 - Open on port 3000
 
