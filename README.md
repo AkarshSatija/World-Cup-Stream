@@ -4,7 +4,7 @@ Using Node and angular
 ## Dependencies and Installation
 - NodeJS and npm should be installed
 - Run "npm install"
-- Empower it if needed :P <sudo npm install> 
+- Empower it if needed :P i.e. Run "sudo npm install"
 - Run "npm start" to start the app @ localhost:3000
 
 ## Scope of Improvemennts
@@ -13,4 +13,3 @@ Using Node and angular
 - Can implement ajax long polling
 - Load on scroll instead of buttons
 - use socket for streaming
-=======
